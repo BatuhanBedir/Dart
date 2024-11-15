@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dart Scoreboard</title>
+    <link rel="stylesheet" href="dart.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button onclick="undoLastAction()">GERİ AL</button>
+            <button onclick="clearAll()">TÜMÜNÜ TEMİZLE</button>
+        </div>
+        <div class="scoreboard">
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="text" id="player1Name" placeholder="Player 1" class="player-name-input"></th>
+                        <th>CRICKET</th> <!-- Burada 'Number' yerine 'CRICKET' yazdık -->
+                        <th><input type="text" id="player2Name" placeholder="Player 2" class="player-name-input"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>20</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>19</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>18</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>17</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>16</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>15</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>14</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>13</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>12</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>11</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>10</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>T</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>D</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>B</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player1')"></td>
+                        <td>H</td>
+                        <td class="mark-cell" onclick="toggleMark(this, 'player2')"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="dart.js"></script>
+</body>
+</html>
