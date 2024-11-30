@@ -40,13 +40,14 @@ button {
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-    width: 100%; /* Butonları %100 genişliğe ayarladık */
-    box-sizing: border-box; /* Padding ve border dahil edilerek genişlik hesaplanır */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover {
     opacity: 0.9;
 }
+
 .scoreboard {
     flex-grow: 1;
     display: flex;
@@ -60,7 +61,7 @@ button:hover {
 
 table {
     width: 100%;
-    background-color: #f5f5f5; /* Daha açık gri bir arka plan rengi */
+    background-color: green;
     border-collapse: collapse;
     color: #333;
     border-radius: 5px;
@@ -68,8 +69,8 @@ table {
     margin-top: 10px;
 }
 
-
-thead th, tbody td {
+thead th,
+tbody td {
     padding: 13px;
     text-align: center;
     border: 1px solid #ccc;
@@ -77,14 +78,20 @@ thead th, tbody td {
 
 .mark-cell {
     cursor: pointer;
-    background-color: #f5f5f5;
+    background-color: green;
     color: #333;
     text-align: center;
 }
 
 .mark-cell:hover {
-    background-color: #eee;
+    background-color: green;
 }
+
+.mark-cell.black {
+    background-color: black;
+    color: white; /* Siyah arka plan için beyaz yazı rengi */
+}
+
 
 .player-name-input {
     width: 100%;
@@ -93,14 +100,15 @@ thead th, tbody td {
     font-weight: bold;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: green;
 }
+
 td {
-    font-size: 20px;  /* Numara boyutunu artırdık */
-    font-weight: bold; /* Numara kalın olacak */
+    font-size: 20px;
+    font-weight: bold;
 }
 
 td:not(.mark-cell) {
-    font-size: 20px;  /* Diğer hücrelerde de numaraların boyutu büyük */
-    font-weight: bold; /* Diğer hücrelerde de numaralar kalın */
+    font-size: 20px;
+    font-weight: bold;
 }
