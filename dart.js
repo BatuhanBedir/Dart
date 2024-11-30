@@ -25,7 +25,7 @@ function undoLastAction() {
         }
     }
 }
-
+ 
 function clearAll() {
     const markCells = document.querySelectorAll('.mark-cell');
     markCells.forEach(cell => {
