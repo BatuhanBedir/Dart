@@ -81,7 +81,7 @@ tbody td {
 }
 
 .mark-cell.black {
-    background-color: black;
+    background-color: #ff883e;
     font-size: 45px;
     color: white; /* Siyah arka plan için beyaz yazı rengi */
 }
