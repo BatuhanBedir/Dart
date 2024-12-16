@@ -110,19 +110,22 @@ td:not(.mark-cell) {
 }
 
 .video-popup {
-    display: none; /* Başlangıçta gizli */
+    display: none;  /* Başlangıçta gizli */
     position: fixed;
-    top: 50%; /* Ortada */
-    left: 50%; /* Ortada */
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000; /* Üst katmanda görünür */
-    background-color: rgba(0, 0, 0, 0.8); /* Hafif karartılmış arka plan */
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     border-radius: 8px;
+    width: 90%;  /* Popup genişliğini %90 yap */
+    height: 900px;  /* Yükseklik otomatik olsun */
 }
 
+/* Video elementine stil */
 .video-popup video {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;  /* Genişliği %100 yap */
+    height: 900px;  /* Yüksekliği %100 yap */
+    object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
 }

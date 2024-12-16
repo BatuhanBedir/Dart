@@ -1,14 +1,11 @@
 let actionHistory = [];
 
-// Oyuncu isimlerine göre videoları eşleştirme
 const playerVideos = {
     ege: {
         "/": "1.mp4",
         "X": "2.mp4",
         "O": "3.mp4"
     }
-    // Buraya yeni oyuncu isimleri eklenebilir, örneğin:
-    // ali: { "/": "a1.mp4", "X": "a2.mp4", "O": "a3.mp4" }
 };
 
 // İşaretleme ve video oynatma
@@ -61,16 +58,14 @@ function clearAll() {
     document.getElementById('player1Name').value = '';
     document.getElementById('player2Name').value = '';
     actionHistory = [];
-    stopVideo(); // Videoyu durdur
+    stopVideo();
 }
 
-// H ve B alanları için özel video oynatma
 function playSpecialFieldVideo(field, mark) {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoSource = document.getElementById('videoSource');
     const videoPopup = document.getElementById('videoPopup');
     
-    // H ve B alanları için video kaynakları
     const specialVideos = {
         H: {
             "/": "1.mp4",
@@ -82,30 +77,26 @@ function playSpecialFieldVideo(field, mark) {
         }
     };
 
-    // Alan ve işarete göre video seçimi
     const selectedVideo = specialVideos[field]?.[mark];
     if (selectedVideo) {
         videoSource.src = selectedVideo;
-        videoPlayer.load(); // Yeni video kaynağını yükle
-        videoPopup.style.display = 'block'; // Popup'ı görünür yap
-        videoPlayer.play(); // Videoyu başlat
+        videoPlayer.load();
+        videoPopup.style.display = 'block';
+        videoPlayer.play();
 
-        // 3 saniye sonra videoyu durdur ve popup'ı gizle
         setTimeout(() => {
             videoPlayer.pause();
             videoPlayer.currentTime = 0; // Videoyu başa sar
             videoPopup.style.display = 'none'; // Popup'ı gizle
-        }, 3000);
+        }, 6000);
     }
 }
 
-// Oyuncu isimlerine göre video kontrolü
 function checkPlayerVideos(mark) {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoSource = document.getElementById('videoSource');
     const videoPopup = document.getElementById('videoPopup');
 
-    // Oyuncu isimlerini al ve küçük harfe çevirerek kontrol et
     const player1Name = document.getElementById('player1Name').value.trim().toLowerCase();
     const player2Name = document.getElementById('player2Name').value.trim().toLowerCase();
 
@@ -121,11 +112,10 @@ function checkPlayerVideos(mark) {
     videoPopup.style.display = 'block';
     videoPlayer.play();
 
-    // 3 saniye sonra durdur
     setTimeout(() => {
         videoPlayer.pause();
-        videoPlayer.currentTime = 0; // Videoyu başa sar
-        videoPopup.style.display = 'none'; // Popup'ı gizle
+        videoPlayer.currentTime = 0; 
+        videoPopup.style.display = 'none'; 
     }, 3000);
 }
 
@@ -133,6 +123,6 @@ function stopVideo() {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoPopup = document.getElementById('videoPopup');
     videoPlayer.pause();
-    videoPlayer.currentTime = 0; // Videoyu başa sar
-    videoPopup.style.display = 'none'; // Popup'ı gizle
+    videoPlayer.currentTime = 0; 
+    videoPopup.style.display = 'none';
 }
