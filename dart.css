@@ -108,3 +108,21 @@ td:not(.mark-cell) {
     font-size: 45px;
     font-weight: 750;
 }
+
+.video-popup {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    top: 50%; /* Ortada */
+    left: 50%; /* Ortada */
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Üst katmanda görünür */
+    background-color: rgba(0, 0, 0, 0.8); /* Hafif karartılmış arka plan */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.video-popup video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
