@@ -118,7 +118,8 @@
 
     td:not(.mark-cell) {
         font-size: 45px;
-        font-weight: 750;
+        font-weight: 900;
+        transform: scaleX(3);
     }
 
     .video-popup {
