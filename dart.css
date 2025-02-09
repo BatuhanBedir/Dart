@@ -70,12 +70,16 @@
         table-layout: fixed;
     }
     thead th:first-child, thead th:last-child {
-        width: 25%; /* Player sütunlarını daralt */
+        width: 35%; /* Player sütunlarını daralt */
     }
     
     thead th:nth-child(2) {
-        width: 50%; /* CRICKET sütununu genişlet */
+        width: 30%; /* CRICKET sütununu genişlet */
         font-size: 50px;
+    }
+    td:not(.mark-cell) {
+        font-size: 55px; /* Sayıları daha büyük yap */
+        font-weight: 900;
     }
     thead th,
     tbody td {
