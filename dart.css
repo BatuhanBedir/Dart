@@ -120,12 +120,12 @@ td:not(.mark-cell) {
     padding: 10px;
     border-radius: 8px;
     width: 90%;  /* Popup genişliğini %90 yap */
-    height: 900px;  /* Yükseklik otomatik olsun */
+    height: 900px; 
 }
 
 /* Video elementine stil */
 .video-popup video {
     width: 100%;  /* Genişliği %100 yap */
-    height: 900px;  /* Yüksekliği %100 yap */
+    height: 900px;  
     object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
 }
