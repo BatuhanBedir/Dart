@@ -1,8 +1,9 @@
 let actionHistory = [];
 
 // İşaretleme ve video oynatma
-function toggleMark(cell) {
+function toggleMark(cell, player) {
     const currentMark = cell.innerText;
+
     const newMark = currentMark === '' ? '/' : currentMark === '/' ? 'X' : currentMark === 'X' ? 'O' : '';
     actionHistory.push({ cell, previousMark: currentMark, wasBlack: cell.classList.contains('black') });
     cell.innerText = newMark;

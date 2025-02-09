@@ -98,7 +98,6 @@
         color: white; /* Siyah arka plan için beyaz yazı rengi */
     }
 
-
     .player-name-input {
         width: 100%;
         padding: 10px;
@@ -119,7 +118,7 @@
     td:not(.mark-cell) {
         font-size: 45px;
         font-weight: 900;
-        transform: scaleX(3);
+        transform: scaleX(2);
     }
 
     .video-popup {
