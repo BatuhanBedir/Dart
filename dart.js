@@ -1,15 +1,7 @@
 let actionHistory = [];
 
-const playerVideos = {
-    ege: {
-        "/": "1.mp4",
-        "X": "2.mp4",
-        "O": "3.mp4"
-    }
-};
-
 // İşaretleme ve video oynatma
-function toggleMark(cell, player) {
+function toggleMark(cell) {
     const currentMark = cell.innerText;
     const newMark = currentMark === '' ? '/' : currentMark === '/' ? 'X' : currentMark === 'X' ? 'O' : '';
     actionHistory.push({ cell, previousMark: currentMark, wasBlack: cell.classList.contains('black') });
@@ -29,9 +21,6 @@ function toggleMark(cell, player) {
     } else {
         cell.classList.remove('black');
     }
-
-    // Oyuncu isimlerini kontrol et ve onlara özel videoları oynat
-    checkPlayerVideos(newMark);
 }
 
 // Son işlemi geri al
@@ -50,8 +39,7 @@ function undoLastAction() {
 
 // Tüm hücreleri temizle ve videoyu durdur
 function clearAll() {
-    const markCells = document.querySelectorAll('.mark-cell');
-    markCells.forEach(cell => {
+    document.querySelectorAll('.mark-cell').forEach(cell => {
         cell.innerText = '';
         cell.classList.remove('black');
     });
@@ -67,14 +55,8 @@ function playSpecialFieldVideo(field, mark) {
     const videoPopup = document.getElementById('videoPopup');
     
     const specialVideos = {
-        H: {
-            "/": "1.mp4",
-            "X": "2.mp4",
-            "O": "3.mp4"
-        },
-        B: {
-            "O": "b.mp4"
-        }
+        H: { "/": "1.mp4", "X": "2.mp4", "O": "3.mp4" },
+        B: { "O": "b.mp4" }
     };
 
     const selectedVideo = specialVideos[field]?.[mark];
@@ -85,44 +67,15 @@ function playSpecialFieldVideo(field, mark) {
         videoPlayer.play();
 
         setTimeout(() => {
-            videoPlayer.pause();
-            videoPlayer.currentTime = 0; // Videoyu başa sar
-            videoPopup.style.display = 'none'; // Popup'ı gizle
+            stopVideo();
         }, 6000);
     }
-}
-
-function checkPlayerVideos(mark) {
-    const videoPlayer = document.getElementById('videoPlayer');
-    const videoSource = document.getElementById('videoSource');
-    const videoPopup = document.getElementById('videoPopup');
-
-    const player1Name = document.getElementById('player1Name').value.trim().toLowerCase();
-    const player2Name = document.getElementById('player2Name').value.trim().toLowerCase();
-
-    if (playerVideos[player1Name]?.[mark]) {
-        videoSource.src = playerVideos[player1Name][mark];
-    } else if (playerVideos[player2Name]?.[mark]) {
-        videoSource.src = playerVideos[player2Name][mark];
-    } else {
-        return;
-    }
-
-    videoPlayer.load();
-    videoPopup.style.display = 'block';
-    videoPlayer.play();
-
-    setTimeout(() => {
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0; 
-        videoPopup.style.display = 'none'; 
-    }, 3000);
 }
 
 function stopVideo() {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoPopup = document.getElementById('videoPopup');
     videoPlayer.pause();
-    videoPlayer.currentTime = 0; 
+    videoPlayer.currentTime = 0;
     videoPopup.style.display = 'none';
 }

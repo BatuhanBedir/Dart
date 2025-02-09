@@ -1,131 +1,139 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #222;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    margin: 0;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        margin: 0;
+    }
 
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-.header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 
-button {
-    background-color: #dc3545;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-}
+    button {
+        background-color: #dc3545;
+        color: white;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-button:hover {
-    opacity: 0.9;
-}
+    button:hover {
+        opacity: 0.9;
+    }
 
-.scoreboard {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-}
+    .scoreboard {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    }
 
-table {
-    width: 100%;
-    height: 100%;
-    background-color: green;
-    border-collapse: collapse;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-thead th,
-tbody td {
-    text-align: center;
-    border: 1px solid #ccc;
-}
-
-
-.mark-cell:hover {
-    background-color: green;
-}
-
-.mark-cell.black {
-    background-color: #ff883e;
-    font-size: 45px;
-    color: white; /* Siyah arka plan için beyaz yazı rengi */
-}
+    table {
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 10px;
+        table-layout: fixed;
+    }
+    thead th:first-child, thead th:last-child {
+        width: 25%; /* Player sütunlarını daralt */
+    }
+    
+    thead th:nth-child(2) {
+        width: 50%; /* CRICKET sütununu genişlet */
+        font-size: 50px;
+    }
+    thead th,
+    tbody td {
+        text-align: center;
+        border: 1px solid #ccc;
+    }
 
 
-.player-name-input {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: green;
-    font-size:30px;
-    color: white
-}
+    .mark-cell:hover {
+        background-color: green;
+    }
 
-td {
-    font-size: 45px;
-    font-weight: bold;
-}
+    .mark-cell.black {
+        background-color: #ff883e;
+        font-size: 45px;
+        color: white; /* Siyah arka plan için beyaz yazı rengi */
+    }
 
-td:not(.mark-cell) {
-    font-size: 45px;
-    font-weight: 750;
-}
 
-.video-popup {
-    display: none;  /* Başlangıçta gizli */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 8px;
-    width: 90%;  /* Popup genişliğini %90 yap */
-    height: 900px; 
-}
+    .player-name-input {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: green;
+        font-size:30px;
+        color: white
+    }
 
-/* Video elementine stil */
-.video-popup video {
-    width: 100%;  /* Genişliği %100 yap */
-    height: 900px;  
-    object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
-}
+    td {
+        font-size: 45px;
+        font-weight: bold;
+    }
+
+    td:not(.mark-cell) {
+        font-size: 45px;
+        font-weight: 750;
+    }
+
+    .video-popup {
+        display: none;  /* Başlangıçta gizli */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 8px;
+        width: 90%;  /* Popup genişliğini %90 yap */
+        height: 900px; 
+    }
+
+    /* Video elementine stil */
+    .video-popup video {
+        width: 90%;  /* Genişliği %100 yap */
+        height: 900px;  
+        object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
+    }
