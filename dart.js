@@ -69,9 +69,9 @@ function playSpecialFieldVideo(field, mark) {
             imagePopup.style.display = 'none';
             videoPlayer.play();
 
-            // setTimeout(() => {
-            //     stopVideo();
-            // }, 3000);
+            setTimeout(() => {
+                stopVideo();
+            }, 3000);
         } else if (selectedMedia.endsWith('.jpg')) {
             imagePopup.style.display = 'block';
             imagePopupImg.src = selectedMedia; 
