@@ -137,7 +137,7 @@
 
     /* Video elementine stil */
     .video-popup video {
-        width: 90%;  /* Genişliği %100 yap */
+        width: 100%;  /* Genişliği %100 yap */
         height: 900px;  
         object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
     }
