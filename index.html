@@ -13,6 +13,18 @@
             <button onclick="clearAll()">TÜMÜNÜ TEMİZLE</button>
         </div>
         <div class="scoreboard">
+            <div class="row dots-container">
+                <div class="col-6 dots-left">
+                    <button class="dot-button" onclick="firstDotButton()">.</button>
+                    <!-- <button class="dot-button" onclick="secondDotButton()">.</button> -->
+                    <button class="dot-button" onclick="thirdDotButton()">.</button>
+                </div>
+                <div class="col-6 dots-right" style="text-align: right;">
+                    <button class="dot-button" onclick="firstDotButton()">.</button>
+                    <!-- <button class="dot-button" onclick="secondDotButton()">.</button> -->
+                    <button class="dot-button" onclick="thirdDotButton()">.</button>
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -106,6 +118,9 @@
         <video id="videoPlayer">
             <source id="videoSource" src="" type="video/mp4">
         </video>
+    </div>
+    <div id="imagePopup" class="popup-container" style="display:none;">
+        <img id="imagePopupImg">
     </div>
     <script src="dart.js"></script>
 </body>

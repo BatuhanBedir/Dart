@@ -141,3 +141,43 @@
         height: 900px;  
         object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
     }
+
+    .dots-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    
+    .dots-left, .dots-right {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .dots-left {
+        justify-content: flex-start;
+    }
+    
+    .dots-right {
+        justify-content: flex-end;
+    }
+    
+    .dot-button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    #imagePopupImg {
+        max-width: 100%;
+        max-height: 80vh; /* Fotoğrafın da ekranı aşmaması için sınırlandırma */
+    }
+    
+    .popup-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        text-align: center;
+    }

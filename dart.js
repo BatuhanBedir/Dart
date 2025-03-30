@@ -44,8 +44,6 @@ function clearAll() {
         cell.innerText = '';
         cell.classList.remove('black');
     });
-    document.getElementById('player1Name').value = '';
-    document.getElementById('player2Name').value = '';
     actionHistory = [];
     stopVideo();
 }
@@ -54,24 +52,46 @@ function playSpecialFieldVideo(field, mark) {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoSource = document.getElementById('videoSource');
     const videoPopup = document.getElementById('videoPopup');
-    
+    const imagePopup = document.getElementById('imagePopup');
+    const imagePopupImg = document.getElementById('imagePopupImg'); // <img> öğesini buradan al
+
     const specialVideos = {
-        H: { "/": "1.mp4", "X": "2.mp4", "O": "3.mp4" },
-        B: { "O": "b.mp4" }
+        H: { "/": "3.mp4", "X": "h2.mp4", "O": "h3.mp4" },
+        B: { "X": "b.mp4", "O": "wsp.jpg" }
     };
 
-    const selectedVideo = specialVideos[field]?.[mark];
-    if (selectedVideo) {
-        videoSource.src = selectedVideo;
-        videoPlayer.load();
-        videoPopup.style.display = 'block';
-        videoPlayer.play();
+    const selectedMedia = specialVideos[field]?.[mark];
+    if (selectedMedia) {
+        if (selectedMedia.endsWith('.mp4')) {
+            videoSource.src = selectedMedia;
+            videoPlayer.load();
+            videoPopup.style.display = 'block';
+            imagePopup.style.display = 'none';
+            videoPlayer.play();
 
-        setTimeout(() => {
-            stopVideo();
-        }, 6000);
+            setTimeout(() => {
+                stopVideo();
+            }, 3000);
+        } else if (selectedMedia.endsWith('.jpg')) {
+            imagePopup.style.display = 'block';
+            imagePopupImg.src = selectedMedia; 
+            videoPopup.style.display = 'none';
+
+            setTimeout(() => {
+                imagePopup.style.display = 'none';  
+            }, 1000);
+        }
     }
 }
+
+
+function stopVideo() {
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+    document.getElementById('videoPopup').style.display = 'none';
+}
+
 
 function stopVideo() {
     const videoPlayer = document.getElementById('videoPlayer');
@@ -80,3 +100,36 @@ function stopVideo() {
     videoPlayer.currentTime = 0;
     videoPopup.style.display = 'none';
 }
+
+function playVideo(videoFile) {
+    var videoPopup = document.getElementById("videoPopup");
+    var videoPlayer = document.getElementById("videoPlayer");
+    var videoSource = document.getElementById("videoSource");
+
+    videoSource.src = videoFile;
+    videoPlayer.load();
+    videoPopup.style.display = "block";
+    videoPlayer.play();
+
+    videoPlayer.onended = function() {
+        videoPopup.style.display = "none";
+        videoPlayer.pause(); // Videoyu durdur
+    };
+}
+
+function firstDotButton() {
+    playVideo("nok1.mp4");
+}
+
+// function secondDotButton() {
+//     playVideo("nok2.mp4");
+// }
+
+function thirdDotButton() {
+    playVideo("nok3.mp4");
+}
+
+document.getElementById("videoPopup").addEventListener("click", function() {
+    this.style.display = "none";
+    document.getElementById("videoPlayer").pause();
+});
