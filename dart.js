@@ -39,7 +39,7 @@ function undoLastAction() {
 }
 
 // Tüm hücreleri temizle ve videoyu durdur
-function clearAll() {
+function resetMarks() {
     document.querySelectorAll('.mark-cell').forEach(cell => {
         cell.innerText = '';
         cell.classList.remove('black');
