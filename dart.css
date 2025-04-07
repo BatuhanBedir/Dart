@@ -138,7 +138,7 @@
     /* Video elementine stil */
     .video-popup video {
         width: 100%;  /* Genişliği %100 yap */
-        height: 900px;  
+        height: 100%;  
         object-fit: contain;  /* Video oranını bozmadan container'a oturacak şekilde sığdır */
     }
 
@@ -168,16 +168,4 @@
         cursor: pointer;
     }
     
-    #imagePopupImg {
-        max-width: 100%;
-        max-height: 80vh; /* Fotoğrafın da ekranı aşmaması için sınırlandırma */
-    }
-    
-    .popup-container {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        text-align: center;
-    }
+  

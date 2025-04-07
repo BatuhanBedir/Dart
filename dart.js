@@ -52,12 +52,10 @@ function playSpecialFieldVideo(field, mark) {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoSource = document.getElementById('videoSource');
     const videoPopup = document.getElementById('videoPopup');
-    const imagePopup = document.getElementById('imagePopup');
-    const imagePopupImg = document.getElementById('imagePopupImg'); // <img> öğesini buradan al
 
     const specialVideos = {
         H: { "/": "3.mp4", "X": "h2.mp4", "O": "h3.mp4" },
-        B: { "X": "b.mp4", "O": "wsp.jpg" }
+        B: { "O": "b.mp4" }
     };
 
     const selectedMedia = specialVideos[field]?.[mark];
@@ -66,21 +64,12 @@ function playSpecialFieldVideo(field, mark) {
             videoSource.src = selectedMedia;
             videoPlayer.load();
             videoPopup.style.display = 'block';
-            imagePopup.style.display = 'none';
             videoPlayer.play();
 
             setTimeout(() => {
                 stopVideo();
             }, 3000);
-        } else if (selectedMedia.endsWith('.jpg')) {
-            imagePopup.style.display = 'block';
-            imagePopupImg.src = selectedMedia; 
-            videoPopup.style.display = 'none';
-
-            setTimeout(() => {
-                imagePopup.style.display = 'none';  
-            }, 1000);
-        }
+        } 
     }
 }
 
