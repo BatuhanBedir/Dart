@@ -44,6 +44,8 @@ function resetMarks() {
         cell.innerText = '';
         cell.classList.remove('black');
     });
+    document.getElementById('player1Name').value = '';
+    document.getElementById('player2Name').value = '';
     actionHistory = [];
     stopVideo();
 }
@@ -106,17 +108,17 @@ function playVideo(videoFile) {
     };
 }
 
-function firstDotButton() {
-    playVideo("nok1.mp4");
-}
+// function firstDotButton() {
+//     playVideo("nok1.mp4");
+// }
 
 // function secondDotButton() {
 //     playVideo("nok2.mp4");
 // }
 
-function thirdDotButton() {
-    playVideo("nok3.mp4");
-}
+// function thirdDotButton() {
+//     playVideo("nok3.mp4");
+// }
 
 document.getElementById("videoPopup").addEventListener("click", function() {
     this.style.display = "none";
